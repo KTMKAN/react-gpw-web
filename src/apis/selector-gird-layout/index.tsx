@@ -172,12 +172,13 @@ let selectorGridLayouts: any[] = [
 const selectorGridLayoutApi = {
     getSelectorGridLayout: (id: any) => {
         console.log(`useSelectSelectorGridLayoutList: /api/selectorGridLayout/${id}`);
+        let config: any = {}
         let res: AxiosResponse<any> = {
             data: selectorGridLayouts,
             status: 200,
             statusText: '200',
             headers: {},
-            config: {},
+            config: config,
         }
         return res;
         // return axios.get(`/api/selectorGridLayout/${id}`);
@@ -196,12 +197,13 @@ const selectorGridLayoutApi = {
         console.log(`useUpdateSelectorGridLayout: /api/selectorGridLayout/${layouts.id}`, layouts);
 
         selectorGridLayouts = layouts;
+        let config: any = {}
         let res: AxiosResponse<any> = {
             data: layouts,
             status: 200,
             statusText: '200',
             headers: {},
-            config: {},
+            config: config,
         }
         return Promise.resolve(res);
         // return axios.put(`/api/selectorGridLayout/${selectorGridLayout.id}`, selectorGridLayout);
